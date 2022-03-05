@@ -2,8 +2,8 @@
 
 # Kaç tane değişken tanımlanacağını kullanıcıdan sayı girdisi olarak alın.
 read -p "Kaç tane cümle tanımlamak istediğinizi giriniz: " var_sayi
-if ! [ $var_sayi -gt 0 ]; then
-    echo "Lütfen 0'dan büyük bir sayı giriniz."
+if ! [ -z "${var_sayi//[1-99]}" ]; then
+    echo "Lütfen geçerli bir sayı giriniz."
     exit 
 # Aldığınız değişkenleri dosya içerisine yazdırın.
 elif [ $var_sayi -gt 0 ]; then
