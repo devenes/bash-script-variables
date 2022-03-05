@@ -2,6 +2,11 @@
 
 # Kaç tane değişken tanımlanacağını kullanıcıdan sayı girdisi olarak alın.
 read -p "Kaç tane cümle tanımlamak istediğinizi giriniz: " var_sayi
+if ! [ $var_sayi -gt 0 ]; then
+    echo "Lütfen 0'dan büyük bir sayı giriniz."
+    exit 
+fi
+
 # Değişkenleri dosya içerisine yazın.
 if [ $var_sayi -gt 0 ]; then
     for i in $(seq 1 $var_sayi); do
@@ -23,5 +28,5 @@ if [ -z "${gosterilecek_satir//[1-99]}" ] && [ -z "${gosterilecek_kelime//[1-99]
         # Tüm dosyayı ekrana yazdırın.
         echo "Tüm dosya: $(cat variable.txt)"
     else
-        echo "Lütfen geçerli bir sayı giriniz."
+        echo "Lütfen geçerli bir sayı giriniz."         
 fi
